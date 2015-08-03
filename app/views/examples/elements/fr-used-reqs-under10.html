@@ -1,0 +1,163 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+    <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+    <!-- add this stylesheet for a numberplate font -->
+    <link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_firstregprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+
+
+
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+  
+
+  <div>
+    <a class="back-to-previous" href="javascript:history.back()">Back 
+    <span class="visuallyhidden"> to the previous question</span></a>
+  </div>
+
+  <br clear="all">
+
+
+
+
+  <form action="basic-flow" method="get" class="form">
+
+  <input type="hidden" name="nextlink" value="start">
+
+
+
+  <div class="grid-row">
+  <div class="column-two-thirds">
+
+    <h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Requirements - Used, under 10 years old</h2>
+
+    <p>You can drive a vehicle to the UK and register it as ‘new’ if <strong>all</strong>  the following apply</p>
+
+    <ul class="list-bullet">
+      <li>it’s registered within 2 weeks of collection (extended to one calendar month at peak periods, eg before 1 March and 1 September)</li>
+
+      <li>it hasn’t been previously permanently registered</li>
+
+      <li>it’s been stored before registration and is a current model or a model that’s stopped being made within the last 2 years</li>
+
+      <li>it only has reasonable delivery mileage, eg it’s been driven from the pickup point to home using a direct route</li>
+
+      <li>it hasn’t been sold by a retailer before</li>
+
+      <li>has not been repaired by a third party</li>
+    </ul>
+
+
+
+
+    <h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Documents required</h2>
+
+    <p>You will need an <strong>import pack</strong> from the DVLA to register the vehicle: <br>
+    <a href="https://www.gov.uk/dvlaforms">Order forms from the DVLA</a>.</p>
+
+    <ul class="list-bullet">
+      <li>V55/4 form – included in the import pack</li>
+
+      <li>ID – photocopies are acceptable</li>
+
+      <li>£55 registration fee – if applicable</li>
+
+      <li>fee for vehicle tax – if applicable</li>
+
+      <li>evidence showing the date the vehicle was collected – invoice</li>
+
+      <li>V267 : Declaration of newness – included in the import pack</li>
+
+      <li>type approval – unless exempt</li>
+
+      <li>insurance certificate for vehicles being registered to a Northern Ireland address – downloaded or faxed copies are acceptable</li>
+
+    </ul>
+
+
+
+
+    <h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">After you've applied</h2>
+
+    <p>Your vehicle may need to be inspected. The DVLA will contact you if this is required.</p>
+
+    <p>If your application is approved, the DVLA will do the following:</p>
+
+    <ul class="list-bullet">
+      <li>Give your vehicle a vehicle registration number appropriate to its age. If you cannot provide evidence of the vehicle’s age, we will give it a ‘Q’ or QNI registration number</li>
+
+      <li>Send you a Vehicle Registration Certificate (V5C) showing you as the registered keeper. We will send this within four to six weeks of receiving your application</li>
+
+      <li>Return your documents, apart from your original non-UK registration document or certificate (If you would like your documents returned by ‘special delivery’ please provide a prepaid special delivery envelope. However, we cannot guarantee to return your documents by a specific date or event – for example, a holiday.)</li>
+
+    </ul>
+
+    <p>Please note: if you do not receive your documents back you must contact the DVLA within one month of the date you made your application, otherwise we will not be able to carry out an investigation.</p>
+
+    <p>If you do not receive any of the above within the specified time, please contact DVLA.</p>
+
+  </div>
+  </div><!-- close column and grid container -->
+
+
+
+  <!-- one green action button, other functions as secondary links -->
+  <div class="form-group" style="padding:1em 0 0 0">
+    <input type="submit" class="button" value="Continue">
+
+    <p style="padding:1em 0"><a href="start">Finished</a>
+
+  </div>
+
+
+  <p style="max-width:640px;margin: 0 0 2.5em 0">
+  <!-- Use a style to stop this longer line leading across the whole width of the page,
+       it makes things harder to read: short lines are easier -->
+  Read more about <a rel="external" href="https://www.gov.uk/vehicle-tax-direct-debit" target="blank">using Direct Debit to pay your vehicle tax</a>, which explains renewals, refunds and cancellations.
+  </p>
+
+
+
+  </form><!-- end of the form -->
+
+
+</main><!-- end content container -->
+
+
+
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

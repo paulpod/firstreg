@@ -1,0 +1,144 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+    <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+    <!-- add this stylesheet for a numberplate font -->
+    <link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_firstregprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+
+
+
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+  
+
+  <div>
+    <a class="back-to-previous" href="javascript:history.back()">Back 
+    <span class="visuallyhidden"> to the previous question</span></a>
+  </div>
+
+  <br clear="all">
+
+
+
+
+  <form action="basic-flow" method="get" class="form">
+
+    <input type="hidden" name="nextlink" value="fr-new-notifynova">
+
+
+
+    <h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Get an Individual Vehicle Approval (IVA) </h2>
+
+
+    
+    <!-- <ul class="ul-data">
+      <li><span>Vehicle status </span><strong>New vehicle</strong></li>
+
+      <li><span>Drive, mileage </span><strong>Right hand drive, mileage in miles</strong></li>
+    </ul> -->
+
+
+    <p style="max-width:620px">
+    Please Note: You  should contact the Driver and Vehicle Standards Agency (DVSA) to obtain Individual Vehicle Approval (IVA) in order to register the vehicle.</p>
+
+    <p>
+    <a href="http://www.gov.uk/government/organisations/driver-and-vehicle-standards-agency" rel="external">www.gov.uk/government/organisations/driver-and-vehicle-standards-agency</a></p>
+
+    
+
+
+
+
+
+
+    <!-- one green action button, other functions as secondary links -->
+    <div class="form-group" style="padding:1em 0 0 0">
+      <input type="submit" class="button" value="Continue">
+
+      <!-- <p style="padding:1em 0"><a href="start">Cancel application</a> -->
+
+    </div>
+
+
+
+    <br clear="all">
+
+
+
+
+    <div id="previousanswers">
+
+      <ul class="list-previousanswers">
+
+      <li>
+        <span class="list-question"><strong>Previous answers</strong></span> 
+        
+      </li>
+
+      <li>
+        <span class="list-question">Is the vehicle new or used?</span> 
+        <span class="list-answer">New</span> 
+        <span class="list-change"><a href="fr-newused">Change</a></span>
+      </li>
+
+      <li>
+        <span class="list-question">The steering wheel on the vehicle?</span> 
+        <span class="list-answer">Left hand drive (LHD)</span> 
+        <span class="list-change"><a href="fr-new-mkm">Change</a></span>
+      </li>
+
+      </ul>
+
+      <br clear="all">
+
+
+      <p><a href="start">Start again</a></p>
+
+    </div>
+
+
+
+
+
+  </form><!-- end of the form -->
+
+
+</main><!-- end content container -->
+
+
+
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
