@@ -11,8 +11,6 @@ require(__dirname + '/node_modules/grunt/lib/grunt.js').cli({
 });
 
 
-var Handlebars = global.Handlebars = require("handlebars");
-require("handlebars.nested");
 
 fs.writeFileSync(pidFile, process.pid, fileOptions);
 
