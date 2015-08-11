@@ -49,10 +49,8 @@
   
 
 
-  <form action="basic-branch" method="get" class="form">
-  <!-- This form action runs a simple script that goes to one or another page,
-       the name of which is based on the hidden name below + the values from the input buttons in the form.
-  -->
+  <form action="isnew-branch" method="get" class="form">
+  <!-- Unique script for this page -->
     <input type="hidden" name="nextlink" value="fr">
 
 
@@ -65,7 +63,7 @@
     <!-- this is one whole radio button, the input is inside the label tags -->
     <label for="radio-inline-1" class="block-label" style="padding-left:50px;margin-top:0;">
 
-      <input id="radio-inline-1" type="radio" name="branch" value="new-mkm">
+      <input id="radio-inline-1" type="radio" name="isnew" value="new">
       <!-- next page will be mkm - is it miles or km on the odo -->
       New vehicle
 
@@ -77,7 +75,7 @@
     <!-- this is a second radio button, the input is inside the label tags -->
     <label for="radio-inline-2" class="block-label" style="padding-left:50px;margin-bottom:0">
 
-      <input id="radio-inline-2" type="radio" name="branch" value="used-mkm">
+      <input id="radio-inline-2" type="radio" name="isnew" value="used">
       <!-- next page will be mkm - is it miles or km on the odo  -->
       Used vehicle
    

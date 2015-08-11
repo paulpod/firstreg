@@ -71,28 +71,121 @@ module.exports = {
 
 
 
-    /* - - - - - - - - - - - - - - - - - - - */
-    /* Specific page logic for First Reg     */
-
-
-    app.get('/examples/elements/firstreg', function (req, res) {
-
-    var newused = req.query.newused;     /* new or used */
-    var leftright = req.query.leftright; /* left or right hand drive */
-    var underover = req.query.underover; /* under 10 years or older  */
 
 
 
+    /* - - - - - - - - - - - - - - - - - - */
+    /*     Pass First Reg Flow control     */
 
+    app.get('/examples/elements/firstreg-flow', function (req, res) {
 
+    var next = req.query.nextlink;
+    var vars = req.query;
+    var isnew = req.query.isnew;
+    var mkm = req.query.mkm;
+    var mkmmsg = req.query.mkmmsg;
 
-
-    res.render('examples/elements/' + 'fr-' + newused + leftright + underover, {'vars' : vars});
-    /* this line renders a new page based on the HTML of the filename + branchname  */
+    res.render('examples/elements/' + next, {'vars' : vars, 'isnew' : isnew, 'mkm' : mkm, 'mkmmsg' : mkmmsg});
     
+    });
+    
+
+
+
+
+
+
+
+    /* - - - - - - - - - - - - - - - - - - -  */
+    /*   Specific pages logic for First Reg   */
+    /*   1. Is the vehicle new or used?       */
+
+    app.get('/examples/elements/isnew-branch', function (req, res) {
+
+    var next = req.query.nextlink;
+    var vars = req.query;
+    var isnew = req.query.isnew;
+
+    res.render('examples/elements/' + next + '-' + isnew + '-mkm', {'vars' : vars, 'isnew' : isnew});
  
     });
-    /* ends the app.get javascript function */
+
+
+
+    /*   2. Is the vehicle lhd or rhd?       */
+
+    app.get('/examples/elements/mkm-branch', function (req, res) {
+
+    var next = req.query.nextlink;
+    var vars = req.query;
+    var isnew = req.query.isnew;
+    var mkm = req.query.mkm;
+
+    console.log(mkm);
+
+    /* pair of messages + next urls for NEW vehicles */
+    if(isnew == 'new') {
+        if(mkm == 'rhd') {
+            var mkmmsg = "Right hand drive (RHD)";
+            var nexturl = "notifynova";
+        }
+
+        if(mkm == 'lhd') {
+            var mkmmsg = "Left hand drive (LHD)";
+            var nexturl = "dvsa";
+        }
+    }
+
+
+    /* pair of messages + next urls for USED vehicles */
+    if(isnew == 'used') {
+        if(mkm == 'rhd') {
+            var mkmmsg = "Right hand drive (RHD)";
+            var nexturl = "10years";
+        }
+
+        if(mkm == 'lhd') {
+            var mkmmsg = "Left hand drive (LHD)";
+            var nexturl = "dvsa";
+        }
+    }
+
+
+    res.render('examples/elements/' + next + '-' + isnew + '-' + nexturl, {'vars' : vars, 'isnew' : isnew, 'mkm' : mkm, 'mkmmsg' : mkmmsg});    
+ 
+    });
+
+
+
+/*   3. Is the vehicle 10 years or older?       */
+
+    app.get('/examples/elements/age-branch', function (req, res) {
+
+    var next = req.query.nextlink;
+    var vars = req.query;
+    var isnew = req.query.isnew;
+    var mkm = req.query.mkm;
+    var mkmmsg = req.query.mkmmsg;
+    var age = req.query.age;
+
+
+    /* pair of messages for <> 10 years old */
+    
+    if(age == 'over10') {
+        var agemsg = "Over 10 years old";
+        var nexturl = "notifynova";
+    }
+
+    if(age == 'under10') {
+        var agemsg = "Up to 10 years old";
+        var nexturl = "notifynova";
+    }
+    
+
+
+    res.render('examples/elements/' + next + '-' + isnew + '-' + nexturl, {'vars' : vars, 'isnew' : isnew, 'mkm' : mkm, 'mkmmsg' : mkmmsg, 'agemsg' : agemsg});    
+ 
+    });
 
 
 

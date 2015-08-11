@@ -7,13 +7,10 @@
 
     <script type="text/javascript" src="/public/javascripts/application.js"></script>
 
+    <!-- add this javascript to make the radio/checkbox buttons work correctly -->
     <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
 
     <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
-
-    <!-- add this stylesheet for a numberplate font -->
-    <link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
-
 
 
 {{/head}}
@@ -31,68 +28,79 @@
 
 
 
-
-
-<main id="content" role="main" style="padding-bottom:0">
+<!-- this is a container for the page contents -->
+<main id="content" role="main">
 
 
   
-
   <div>
-    <a class="back-to-previous" href="javascript:history.back()">Back 
-    <span class="visuallyhidden"> to the previous question</span></a>
+  <!-- the back link uses a simple javascript to go to previous page -->
+  <a class="back-to-previous" href="javascript:history.back()">
+  Back 
+  <!-- the rest of this label is hidden, only used for screenreaders -->
+  <span class="visuallyhidden"> to the previous question</span>
+  </a>
   </div>
+
+
 
   <br clear="all">
 
+  
 
 
-
-  <form action="firstreg-flow" method="get" class="form">
-
-    <input type="hidden" name="nextlink" value="fr-used-10years">
+  <form action="age-branch" method="get" class="form">
+  
+    <input type="hidden" name="nextlink" value="fr">
     <input type="hidden" name="isnew" value="{{isnew}}">
     <input type="hidden" name="mkm" value="{{mkm}}">
     <input type="hidden" name="mkmmsg" value="{{mkmmsg}}">
 
 
-
-    <h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Get an Individual Vehicle Approval (IVA) </h2>
-
-
-    
-    <!-- <ul class="ul-data">
-      <li><span>Vehicle status </span><strong>New vehicle</strong></li>
-
-      <li><span>Drive, mileage </span><strong>Right hand drive, mileage in miles</strong></li>
-    </ul> -->
-
-
-    <p style="max-width:620px">
-    Please Note: You  should contact the Driver and Vehicle Standards Agency (DVSA) to obtain Individual Vehicle Approval (IVA) in order to register the vehicle.</p>
-
-    <p>
-    <a href="http://www.gov.uk/government/organisations/driver-and-vehicle-standards-agency" rel="external">www.gov.uk/government/organisations/driver-and-vehicle-standards-agency</a></p>
+    <h1 class="form-title heading-large" style="margin:0 0 1em 0;padding:0">
+      Is the vehicle...
+    </h1>
 
     
 
+    <!-- this is one whole radio button, the input is inside the label tags -->
+    <label for="radio-inline-1" class="block-label" style="padding-left:50px;margin-top:0;">
+
+      <input id="radio-inline-1" type="radio" name="age" value="over10">
+      <!-- in the input we set type (radio) variable and value for the link to next page -->
+      Over 10 years old?
+
+    </label>
 
 
 
+    
+    <!-- this is a second radio button, the input is inside the label tags -->
+    <label for="radio-inline-2" class="block-label" style="padding-left:50px;margin-bottom:0">
 
-
-    <!-- one green action button, other functions as secondary links -->
-    <div class="form-group" style="padding:1em 0 0 0">
-      <input type="submit" class="button" value="Continue">
-
-      <!-- <p style="padding:1em 0"><a href="start">Cancel application</a> -->
-
-    </div>
-
+      <input id="radio-inline-2" type="radio" name="age" value="under10">
+      <!-- again set the value, this time for a different page to link to next -->
+      Under 10 years old?
+   
+    </label>
 
 
     <br clear="all">
 
+
+
+
+
+
+
+
+
+    <!-- one green action button per page -->
+    <div class="form-group" style="padding-top:2.2em">
+
+      <input type="submit" class="button" value="Continue">
+
+    </div>
 
 
 

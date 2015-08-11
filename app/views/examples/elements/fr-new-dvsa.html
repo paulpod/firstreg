@@ -48,9 +48,12 @@
 
 
 
-  <form action="basic-flow" method="get" class="form">
+  <form action="firstreg-flow" method="get" class="form">
 
-    <input type="hidden" name="nextlink" value="fr-new-notifynova-lhd">
+    <input type="hidden" name="nextlink" value="fr-new-notifynova">
+    <input type="hidden" name="isnew" value="{{isnew}}">
+    <input type="hidden" name="mkm" value="{{mkm}}">
+    <input type="hidden" name="mkmmsg" value="{{mkmmsg}}">
 
 
 
@@ -104,13 +107,13 @@
 
       <li>
         <span class="list-question">Is the vehicle new or used?</span> 
-        <span class="list-answer">New</span> 
+        <span class="list-answer" style="text-transform:capitalize">{{isnew}}</span> 
         <span class="list-change"><a href="fr-newused">Change</a></span>
       </li>
 
       <li>
         <span class="list-question">The steering wheel on the vehicle?</span> 
-        <span class="list-answer">Left hand drive (LHD)</span> 
+        <span class="list-answer">{{mkmmsg}}</span> 
         <span class="list-change"><a href="fr-new-mkm">Change</a></span>
       </li>
 

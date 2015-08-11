@@ -49,11 +49,15 @@
   
 
 
-  <form action="basic-branch" method="get" class="form">
-  <!-- This form action runs a simple script that goes to one or another page,
-       the name of which is based on the hidden name below + the values from the input buttons in the form.
-  -->
-    <input type="hidden" name="nextlink" value="fr-used">
+  <form action="mkm-branch" method="get" class="form">
+ 
+    <input type="hidden" name="nextlink" value="fr">
+
+    <input type="hidden" name="isnew" value="{{isnew}}">
+
+
+
+
 
 
     <h1 class="form-title heading-large" style="margin:0 0 1em 0;padding:0">
@@ -65,8 +69,7 @@
     <!-- this is one whole radio button, the input is inside the label tags -->
     <label for="radio-inline-1" class="block-label" style="padding-left:50px;margin-top:0;">
 
-      <input id="radio-inline-1" type="radio" name="branch" value="10years-rhd">
-      <input type="hidden" name="mkm" value="RHD">
+      <input id="radio-inline-1" type="radio" name="mkm" value="rhd">
       <!-- in the input we set type (radio) variable and value for the link to next page -->
       Right hand drive with mileage displayed in miles
 
@@ -78,8 +81,7 @@
     <!-- this is a second radio button, the input is inside the label tags -->
     <label for="radio-inline-2" class="block-label" style="padding-left:50px;margin-bottom:0">
 
-      <input id="radio-inline-2" type="radio" name="branch" value="dvsa">
-      <input type="hidden" name="mkm" value="LHD">
+      <input id="radio-inline-2" type="radio" name="mkm" value="lhd">
       <!-- again set the value, this time for a different page to link to next -->
       Left hand drive with mileage displayed in kilometers
    
@@ -122,7 +124,7 @@
 
       <li>
         <span class="list-question">Is the vehicle new or used?</span> 
-        <span class="list-answer">Used</span> 
+        <span class="list-answer" style="text-transform:capitalize">{{isnew}}</span> 
         <span class="list-change"><a href="fr-newused">Change</a></span>
       </li>
 

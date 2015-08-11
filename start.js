@@ -10,6 +10,10 @@ require(__dirname + '/node_modules/grunt/lib/grunt.js').cli({
   'gruntfile' : gruntfile
 });
 
+
+var Handlebars = global.Handlebars = require("handlebars");
+require("handlebars.nested");
+
 fs.writeFileSync(pidFile, process.pid, fileOptions);
 
 process.on('SIGINT', function() {

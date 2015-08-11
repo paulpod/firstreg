@@ -50,32 +50,33 @@
 
   <form action="firstreg-flow" method="get" class="form">
 
-    <input type="hidden" name="nextlink" value="fr-used-10years">
+    <input type="hidden" name="nextlink" value="fr-{{isnew}}-reqs">
     <input type="hidden" name="isnew" value="{{isnew}}">
     <input type="hidden" name="mkm" value="{{mkm}}">
     <input type="hidden" name="mkmmsg" value="{{mkmmsg}}">
 
 
 
-    <h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Get an Individual Vehicle Approval (IVA) </h2>
+    <h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Notify NOVA <!--&amp; optional receipt--></h2>
 
 
     
-    <!-- <ul class="ul-data">
-      <li><span>Vehicle status </span><strong>New vehicle</strong></li>
+    <ul class="ul-data">
+      <li><span>Vehicle status </span><strong style="text-transform:capitalize">{{isnew}} vehicle</strong></li>
 
-      <li><span>Drive, mileage </span><strong>Right hand drive, mileage in miles</strong></li>
-    </ul> -->
+      <li><span>Drive, mileage </span><strong>{{mkmmsg}}</strong></li>
+
+
+    </ul>
 
 
     <p style="max-width:620px">
-    Please Note: You  should contact the Driver and Vehicle Standards Agency (DVSA) to obtain Individual Vehicle Approval (IVA) in order to register the vehicle.</p>
+    Please Note: You must notify HMRC within 14 days of the vehicle’s arrival. You must make this notification before DVLA can register the vehicle. 
+    </p>
 
     <p>
-    <a href="http://www.gov.uk/government/organisations/driver-and-vehicle-standards-agency" rel="external">www.gov.uk/government/organisations/driver-and-vehicle-standards-agency</a></p>
-
-    
-
+    <a href="http://www.hmrc.gov.uk/nova" rel="external">www.hmrc.gov.uk/nova</a> or 0300 200 3700
+    </p>
 
 
 
