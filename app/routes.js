@@ -7,6 +7,85 @@ module.exports = {
     });
     /* This is a bit of code that looks for an index.html page in any directory */
 
+
+
+
+
+
+    /* Do linear page flow with variables in an array  */
+    app.get('/examples/elements/q1-flow', function (req, res) {
+
+    var next = req.query.nextlink;
+
+    var vars = req.query;
+    console.log(vars);
+    /* grab the rest of the variables passed in the query, if any, to pass out to any waiting template placeholders */
+
+
+    res.render('examples/elements/' + next, {'vars' : vars});
+
+ 
+    });
+
+
+
+
+    /* - - - - - - - - - - - - - - - - - - - - - - - -  */
+    /* Calculate the content to go on the results page  */
+    app.get('/examples/elements/calc-answer', function (req, res) {
+
+    var next = req.query.nextlink;
+
+    var vars = req.query;
+    console.log(vars);
+    var isnew = req.query.isnew;
+    var iseu = req.query.iseu;
+    var type = req.query.type;
+    var side = req.query.side;
+
+    /* grab the rest of the variables */
+
+    var next;
+
+    var answerlink = "answers-generic";
+
+    /* check values for the new+noteu+car+lhd state */
+    if(isnew == 'new') {
+        if(iseu == 'noteu') {
+            if(type == 'car') {
+                if(side == 'lhd') {
+                    var answerlink = "answers-new-noteu-car-lhd"
+                }
+            }
+        }
+    }
+    /* check values for the new+eu+car+rhd state */
+    if(isnew == 'new') {
+        if(iseu == 'eu') {
+            if(type == 'car') {
+                if(side == 'rhd') {
+                    var answerlink = "answers-new-eu-car-rhd"
+                }
+            }
+        }
+    }
+    /* check values for the new+eu+motorbike+x state */
+    if(isnew == 'new') {
+        if(iseu == 'eu') {
+            if(type == 'motorbike') {
+                var answerlink = "answers-new-eu-motorbike"
+            }
+        }
+    }
+
+        
+
+
+    res.render('examples/elements/' + answerlink, {'vars' : vars});
+
+ 
+    });
+
     
 
 

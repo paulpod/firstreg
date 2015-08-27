@@ -1,0 +1,56 @@
+
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <!-- add this javascript to make the radio/checkbox buttons work correctly -->
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+    <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_firstregprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+
+
+
+<h2 class="heading-large">New motorbike from within the EU</h2>
+
+<ul class="list-bullet">
+	<li>V55/4</li>
+	<li>ID (photocopies are acceptable) </li>
+	<li>Fee for vehicle tax and First reg (if applicable)</li>
+	<li>Type Approval (if applicable e.g. trial/enduro bikes are exempt from type approval. The customer can either supply an ECWVTA Certificate of Conformity showing UK spec (or get a mutual recognition certificate from VCA if the wrong spec if captured) or they can get an MSVA certificate from DVSA)</li>
+	<li>Certificate or Declaration of Newness</li>
+	<li>Contact HMRC (NOVA)</li>
+
+</ul>
+
+
+</main><!-- end content container -->
+
+
+
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

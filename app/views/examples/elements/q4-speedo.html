@@ -1,0 +1,154 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <!-- add this javascript to make the radio/checkbox buttons work correctly -->
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+    <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_firstregprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+
+
+
+<!-- this is a container for the page contents -->
+<main id="content" role="main">
+
+
+  
+  <div>
+  <!-- the back link uses a simple javascript to go to previous page -->
+  <a class="back-to-previous" href="javascript:history.back()">
+  Back 
+  <!-- the rest of this label is hidden, only used for screenreaders -->
+  <span class="visuallyhidden"> to the previous question</span>
+  </a>
+  </div>
+
+
+
+  <br clear="all">
+
+  
+
+
+  <form action="q1-flow" method="get" class="form">
+
+    {{#vars}}
+    <input type="hidden" name="isnew" value="{{isnew}}">
+    <input type="hidden" name="iseu" value="{{iseu}}">
+    <input type="hidden" name="type" value="{{type}}">
+    {{/vars}}
+
+    <input type="hidden" name="nextlink" value="q5-side">
+
+
+    <h1 class="form-title heading-large" style="margin:0 0 1em 0;padding:0">
+      What is the primary measurement on the speedometer?
+    </h1>
+
+    
+
+    <label for="radio-inline-1" class="block-label" style="padding-left:50px;margin-top:0;">
+
+      <input id="radio-inline-1" type="radio" name="mkm" value="kph">
+      Kilometres per hour, KPH
+
+    </label>
+
+    
+    
+    <label for="radio-inline-2" class="block-label" style="padding-left:50px;margin-bottom:0">
+
+      <input id="radio-inline-2" type="radio" name="mkm" value="mph">
+      Miles per hour, MPH
+   
+    </label>
+
+
+
+    
+
+
+
+
+
+
+    <!-- one green action button per page -->
+    <div class="form-group" style="padding-top:2.2em">
+
+      <input type="submit" class="button" value="Continue">
+
+    </div>
+
+
+
+
+    <div id="previousanswers">
+
+      <ul class="list-previousanswers">
+
+      <li>
+        <span class="list-question"><strong>Previous answers</strong></span> 
+        
+      </li>
+{{#vars}}
+      <li>
+        <span class="list-question">Is the vehicle new or used?</span> 
+        <span class="list-answer" style="text-transform:capitalize">{{isnew}}</span> 
+        <span class="list-change"><a href="q1-newused">Change</a></span>
+      </li>
+
+      <li>
+        <span class="list-question">Where is the vehicle from?</span> 
+        <span class="list-answer" style="text-transform:uppercase">{{iseu}}</span> 
+        <span class="list-change"><a href="q2-eu">Change</a></span>
+      </li>
+
+      <li>
+        <span class="list-question">What type of vehicle?</span> 
+        <span class="list-answer" style="text-transform:capitalize">{{type}}</span> 
+        <span class="list-change"><a href="q3-type">Change</a></span>
+      </li>
+{{/vars}}
+      </ul>
+
+      <br clear="all">
+
+
+      <p><a href="start">Start again</a></p>
+
+    </div>
+
+  </form><!-- end of the form -->
+
+
+</main><!-- end content container -->
+
+
+
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

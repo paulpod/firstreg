@@ -49,37 +49,47 @@
   
 
 
-  <form action="isnew-branch" method="get" class="form">
-  <!-- Unique script for this page -->
-    <input type="hidden" name="nextlink" value="fr">
+  <form action="q1-flow" method="get" class="form">
+
+    {{#vars}}
+    <input type="hidden" name="isnew" value="{{isnew}}">
+    <input type="hidden" name="iseu" value="{{iseu}}">
+    {{/vars}}
+
+    <input type="hidden" name="nextlink" value="q4-speedo">
 
 
     <h1 class="form-title heading-large" style="margin:0 0 1em 0;padding:0">
-      Is the vehicle new or used?
+      What type of vehicle is it?
     </h1>
 
     
 
-    <!-- this is one whole radio button, the input is inside the label tags -->
     <label for="radio-inline-1" class="block-label" style="padding-left:50px;margin-top:0;">
 
-      <input id="radio-inline-1" type="radio" name="isnew" value="new">
-      <!-- next page will be mkm - is it miles or km on the odo -->
-      New vehicle
+      <input id="radio-inline-1" type="radio" name="type" value="car">
+      It is a car
 
     </label>
-
-
 
     
-    <!-- this is a second radio button, the input is inside the label tags -->
+    
     <label for="radio-inline-2" class="block-label" style="padding-left:50px;margin-bottom:0">
 
-      <input id="radio-inline-2" type="radio" name="isnew" value="used">
-      <!-- next page will be mkm - is it miles or km on the odo  -->
-      Used vehicle
+      <input id="radio-inline-2" type="radio" name="type" value="motorbike">
+      It is a motorbike
    
     </label>
+
+
+
+    <label for="radio-inline-3" class="block-label" style="padding-left:50px;margin-bottom:0">
+
+      <input id="radio-inline-3" type="radio" name="type" value="other">
+      It is something else
+   
+    </label>
+
 
 
 
@@ -96,6 +106,35 @@
 
 
 
+  <div id="previousanswers">
+
+      <ul class="list-previousanswers">
+
+      <li>
+        <span class="list-question"><strong>Previous answers</strong></span> 
+        
+      </li>
+{{#vars}}
+      <li>
+        <span class="list-question">Is the vehicle new or used?</span> 
+        <span class="list-answer" style="text-transform:capitalize">{{isnew}}</span> 
+        <span class="list-change"><a href="q1-newused">Change</a></span>
+      </li>
+
+      <li>
+        <span class="list-question">Where is the vehicle from?</span> 
+        <span class="list-answer" style="text-transform:uppercase">{{iseu}}</span> 
+        <span class="list-change"><a href="q2-eu">Change</a></span>
+      </li>
+{{/vars}}
+      </ul>
+
+      <br clear="all">
+
+
+      <p><a href="start">Start again</a></p>
+
+    </div>
 
   </form><!-- end of the form -->
 

@@ -1,0 +1,61 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <!-- add this javascript to make the radio/checkbox buttons work correctly -->
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+    <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_firstregprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+
+
+
+<!-- this is a container for the page contents -->
+<main id="content" role="main">
+
+<h2 class="heading-large">You will need</h2>
+
+<ul class="list-bullet">
+	<li>V55/4</li>
+	<li>ID (photocopies are acceptable) </li>
+	<li>Fee for vehicle tax and First reg (if applicable)</li>
+	<li>Type Approval (if applicable. If the customer has an ECWVTA Certificate of Conformity which states left hand drive and metric units, they will need to be referred to VCA to get a mutual recognition certificate to show the correct hand of traffic and speedometer units. If they cannot get an ECWVTA CoC from the manufacturer, they should be able to get an IVA certificate from DVSA)</li>
+	<li>Certificate or Declaration of Newness</li>
+	<li>Contact HMRC (NOVA)</li>
+	<li>More more</li>
+	<li>Generic answers</li>
+</ul>
+
+
+
+</main><!-- end content container -->
+
+
+
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
+
