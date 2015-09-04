@@ -1,0 +1,65 @@
+
+    {{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <!-- add this javascript to make the radio/checkbox buttons work correctly -->
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+    <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_firstregprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+
+
+<!-- this is a container for the page contents -->
+<main id="content" role="main">
+<div class="grid-row">
+
+    <div class="column-two-thirds">
+
+
+<h2 class="heading-large">Next steps for you:</h2>
+
+<ul class="list-bullet">
+  <li>Contact HMRC (NOVA) and pay VAT (if applicable)</li>
+  <li>Supply your Type Approval EC Certificate of Conformity which states left hand drive and metric </li>
+  <li>Complete a V55/4</li>
+  <li>Supply your Certificate of Newness</li>
+  <li>Supply ID (photocopies are acceptable) </li>
+  <li>Fee for vehicle tax and First reg (if applicable)</li>
+  <li>Evidence showing the date the vehicle was collected (invoice)</li>
+  <li>Insurance Certificate for vehicles being registered to an NI Address (Downloaded or faxed copies are acceptable)</li>
+
+</ul>
+
+
+</div></div>
+</main><!-- end content container -->
+
+
+
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

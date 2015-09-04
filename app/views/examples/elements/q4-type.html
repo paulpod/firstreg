@@ -49,10 +49,10 @@
   
 
 
-  <form action="q1-flow" method="get" class="form">
+  <form action="calc2" method="get" class="form">
 
     {{#vars}}
-    <input type="hidden" name="import" value="{{import}}">
+    <input type="hidden" name="importer" value="{{importer}}">
     <input type="hidden" name="vat" value="{{vat}}">
     <input type="hidden" name="isnew" value="{{isnew}}">
     {{/vars}}
@@ -80,13 +80,13 @@
 
       <p style="max-width:620px">Does it state the vehicle is fit for use in the UK with left-hand traffic?</p>
       
-      <label for="radio-inline-3" class="block-label">
-      <input id="radio-inline-3" type="radio"  name="isuk" value="yes">
+      <label for="ec-radio-inline-1" class="block-label">
+      <input id="ec-radio-inline-1" type="radio"  name="isuk" value="yes">
       Yes, it is fit for the UK
       </label>
 
-      <label for="radio-inline-4" class="block-label">
-      <input id="radio-inline-4" type="radio"  name="isuk" value="no">
+      <label for="ec-radio-inline-2" class="block-label">
+      <input id="ec-radio-inline-2" type="radio"  name="isuk" value="no">
       No
       </label>
 
@@ -147,7 +147,7 @@
 {{#vars}}
       <li>
         <span class="list-question">Who is importing the vehicle?</span> 
-        <span class="list-answer" style="text-transform:capitalize">{{import}}</span> 
+        <span class="list-answer" style="text-transform:capitalize">{{importer}}</span> 
         <span class="list-change"><a href="q1-importer">Change</a></span>
       </li>
 

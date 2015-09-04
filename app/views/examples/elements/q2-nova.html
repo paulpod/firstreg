@@ -52,7 +52,7 @@
   <form action="q1-flow" method="get" class="form">
 
     {{#vars}}
-    <input type="hidden" name="import" value="{{import}}">
+    <input type="hidden" name="importer" value="{{importer}}">
     {{/vars}}
 
     <input type="hidden" name="nextlink" value="q3-newness">
@@ -108,7 +108,7 @@
       {{#vars}}
       <li>
         <span class="list-question">Who is importing the vehicle?</span> 
-        <span class="list-answer" style="text-transform:capitalize">{{import}}</span> 
+        <span class="list-answer" style="text-transform:capitalize">{{importer}}</span> 
         <span class="list-change"><a href="q1-importer">Change</a></span>
       </li>
     {{/vars}}

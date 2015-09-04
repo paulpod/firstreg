@@ -19,7 +19,8 @@ module.exports = {
 
     var vars = req.query;
     console.log(vars);
-    /* grab the rest of the variables passed in the query, if any, to pass out to any waiting template placeholders */
+    /* grab the rest of the variables passed in the query, if any, 
+    /* to pass out to any waiting template placeholders */
 
 
     res.render('examples/elements/' + next, {'vars' : vars});
@@ -84,6 +85,58 @@ module.exports = {
     res.render('examples/elements/' + answerlink, {'vars' : vars});
 
  
+    });
+
+
+
+
+    /* - - - - - - - - - - - - - - - - - - - - - - - -  */
+    /* Another answer calculator...to the results page  */
+    app.get('/examples/elements/calc2', function (req, res) {
+
+    var next = req.query.nextlink;
+
+    var vars = req.query;
+    console.log(vars);
+    var importer = req.query.importer;
+    var isnew = req.query.isnew;
+    var vat = req.query.vat;
+    var type = req.query.type;
+    var isuk = req.query.isuk;
+
+
+    /* grab the rest of the variables */
+
+    var next;
+
+    var answerlink = "answers-generic";
+
+    /* check values for the importer=me, VAT=no, New=Cert, Type=EC+UK state */
+    if(importer == 'me') {
+        if(vat == 'no') {
+            if(isnew == 'yes') {
+                if(type == 'ec') {
+                    if(isuk == 'yes')
+                    var answerlink = "answers-new-ec-isuk"
+                }
+            }
+        }
+    }
+    /* check values for the importer=me, VAT=no, New=nodocs, Type=nodocs state */
+    if(importer == 'me') {
+        if(vat == 'no') {
+            if(isnew == 'no') {
+                if(type == 'none') {
+                    var answerlink = "answers-new-nodocs"
+                }
+            }
+        }
+    }
+   
+
+
+    res.render('examples/elements/' + answerlink, {'vars' : vars});
+
     });
 
     

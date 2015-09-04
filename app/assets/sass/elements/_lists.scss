@@ -13,6 +13,12 @@ ol {
   padding-left: 20px;
 }
 
+// Bulleted lists
+.list-square {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
 // Numbered lists
 .list-number {
   list-style-type: decimal;
@@ -23,12 +29,14 @@ ol {
 }
 
 .list-bullet,
+.list-square li,
 .list-number {
   margin-top: 5px;
   margin-bottom: 20px;
 }
 
 .list-bullet li,
+.list-square li,
 .list-number li {
   margin-bottom: 5px;
 }
