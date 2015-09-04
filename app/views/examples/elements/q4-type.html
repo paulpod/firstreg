@@ -1,0 +1,182 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <!-- add this javascript to make the radio/checkbox buttons work correctly -->
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+    <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_firstregprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+
+
+
+<!-- this is a container for the page contents -->
+<main id="content" role="main">
+
+
+  
+  <div>
+  <!-- the back link uses a simple javascript to go to previous page -->
+  <a class="back-to-previous" href="javascript:history.back()">
+  Back 
+  <!-- the rest of this label is hidden, only used for screenreaders -->
+  <span class="visuallyhidden"> to the previous question</span>
+  </a>
+  </div>
+
+
+
+  <br clear="all">
+
+  
+
+
+  <form action="q1-flow" method="get" class="form">
+
+    {{#vars}}
+    <input type="hidden" name="import" value="{{import}}">
+    <input type="hidden" name="vat" value="{{vat}}">
+    <input type="hidden" name="isnew" value="{{isnew}}">
+    {{/vars}}
+
+    <input type="hidden" name="nextlink" value="answers-generic">
+
+
+    <h1 class="form-title heading-large" style="margin:0 0 1em 0;padding:0">
+      Can you supply type approval for the vehicle?
+    </h1>
+
+    
+
+    <label for="radio-inline-1" class="block-label" style="padding-left:50px;margin-top:0;" data-target="ec-type">
+
+      <input id="radio-inline-1" type="radio" name="type" value="ec">
+      I have EC type approval, from a manufacturer Certificate of Conformity
+
+    </label>
+
+
+    <br clear="all">
+
+    <div class="panel-indent js-hidden" id="ec-type" style="margin-top:1em">
+
+      <p style="max-width:620px">Does it state the vehicle is fit for use in the UK with left-hand traffic?</p>
+      
+      <label for="radio-inline-3" class="block-label">
+      <input id="radio-inline-3" type="radio"  name="isuk" value="yes">
+      Yes, it is fit for the UK
+      </label>
+
+      <label for="radio-inline-4" class="block-label">
+      <input id="radio-inline-4" type="radio"  name="isuk" value="no">
+      No
+      </label>
+
+    </div>
+
+
+
+    
+    <label for="radio-inline-2" class="block-label" style="padding-left:50px;margin-bottom:0">
+
+      <input id="radio-inline-2" type="radio" name="type" value="nssta">
+      I have NSSTA type approval from a manufacturer
+   
+    </label>
+
+
+    <label for="radio-inline-3" class="block-label" style="padding-left:50px;margin-bottom:0">
+
+      <input id="radio-inline-3" type="radio" name="type" value="iva">
+      I have IVA type approval from DVSA
+   
+    </label>
+
+
+
+    
+
+
+
+
+
+
+    <!-- one green action button per page -->
+    <div class="form-group" style="padding-top:2.2em">
+
+      <input type="submit" class="button" value="Continue">
+
+    </div>
+
+
+
+
+    <div id="previousanswers">
+
+      <ul class="list-previousanswers">
+
+      <li>
+        <span class="list-question"><strong>Previous answers</strong></span> 
+        
+      </li>
+{{#vars}}
+      <li>
+        <span class="list-question">Who is importing the vehicle?</span> 
+        <span class="list-answer" style="text-transform:capitalize">{{import}}</span> 
+        <span class="list-change"><a href="q1-importer">Change</a></span>
+      </li>
+
+      <li>
+        <span class="list-question">VAT: Have you notified the HMRC using NOVA?</span> 
+        <span class="list-answer" style="text-transform:capitalize">{{vat}}</span> 
+        <span class="list-change"><a href="q2-nova">Change</a></span>
+      </li>
+
+      <li>
+        <span class="list-question">Can you supply a declaration of newness?</span> 
+        <span class="list-answer" style="text-transform:capitalize">{{isnew}}</span> 
+        <span class="list-change"><a href="q3-newness">Change</a></span>
+      </li>
+{{/vars}}
+      </ul>
+
+      <br clear="all">
+
+
+      <p><a href="start">Start again</a></p>
+
+    </div>
+
+  </form><!-- end of the form -->
+
+
+</main><!-- end content container -->
+
+
+
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

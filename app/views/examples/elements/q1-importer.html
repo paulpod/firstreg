@@ -1,0 +1,114 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <!-- add this javascript to make the radio/checkbox buttons work correctly -->
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+    <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_firstregprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+
+
+
+<!-- this is a container for the page contents -->
+<main id="content" role="main">
+
+
+  
+  <div>
+  <!-- the back link uses a simple javascript to go to previous page -->
+  <a class="back-to-previous" href="javascript:history.back()">
+  Back 
+  <!-- the rest of this label is hidden, only used for screenreaders -->
+  <span class="visuallyhidden"> to the previous question</span>
+  </a>
+  </div>
+
+
+
+  <br clear="all">
+
+  
+
+
+  <form action="q1-flow" method="get" class="form">
+  <!-- Unique script for this page -->
+    <input type="hidden" name="nextlink" value="q2-nova">
+
+
+    <h1 class="form-title heading-large" style="margin:0 0 1em 0;padding:0">
+      Who is importing the vehicle?
+    </h1>
+
+    
+
+    <!-- this is one whole radio button, the input is inside the label tags -->
+    <label for="radio-inline-1" class="block-label" style="padding-left:50px;margin-top:0;">
+
+      <input id="radio-inline-1" type="radio" name="import" value="me">
+     
+      I'm importing a vehicle myself
+
+    </label>
+
+
+
+    
+    <!-- this is a second radio button, the input is inside the label tags -->
+    <label for="radio-inline-2" class="block-label" style="padding-left:50px;margin-bottom:0">
+
+      <input id="radio-inline-2" type="radio" name="import" value="dealer">
+
+      I'm purchasing a vehicle a dealer has imported
+   
+    </label>
+
+
+
+
+
+
+    <!-- one green action button per page -->
+    <div class="form-group" style="padding-top:2.2em">
+
+      <input type="submit" class="button" value="Continue">
+
+    </div>
+
+
+
+
+
+  </form><!-- end of the form -->
+
+
+</main><!-- end content container -->
+
+
+
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
