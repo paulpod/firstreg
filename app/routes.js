@@ -323,6 +323,63 @@ module.exports = {
 
 
 
+    /* - - - - - - - - - - - - - - */
+    /* Using idealpostcode to get  */
+    /* addresses for a postcode    */
+
+    app.get('/examples/elements/find-postcode', function (req, res) {
+
+     
+    
+
+      var postcode = req.query.postcode;
+
+      var idealPostcodes = require("ideal-postcodes")("ak_i0ze7k03RQwMtjncypybi4nQOE97T")
+
+      idealPostcodes.lookupPostcode(postcode, function (error, results) {
+        if (error) {
+        // Implement some error handling
+        }
+
+        console.log(results); 
+        res.render('examples/elements/address.html', {'postcode' : postcode, 'result' : results})
+
+      });
+
+    });
+
+
+
+
+
+    /* - - - - - - - - - - - - - - - - */
+    /* Using idealpostcode to playback */
+    /* full address into a form from   */
+    /* the user chosen udprn           */
+
+    app.get('/examples/elements/chosen-address', function (req, res) {
+
+     
+
+      var selectedudp = req.query.udprn;
+
+      var idealPostcodes = require("ideal-postcodes")("ak_i0ze7k03RQwMtjncypybi4nQOE97T")
+
+      idealPostcodes.lookupUdprn(selectedudp, function (error, address) {
+        if (error) {
+        // Implement some error handling
+        }
+
+        console.log(address); 
+        res.render('examples/elements/address-playback.html', {'address' : address})
+
+      });
+
+    });
+
+
+
+
 
   }
 };

@@ -1,0 +1,105 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <!-- add this javascript to make the radio/checkbox buttons work correctly -->
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+    <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_firstregprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+
+
+
+<!-- this is a container for the page contents -->
+<main id="content" role="main">
+
+
+  
+  <div>
+  <!-- the back link uses a simple javascript to go to previous page -->
+  <a class="back-to-previous" href="javascript:history.back()">
+  Back 
+  <!-- the rest of this label is hidden, only used for screenreaders -->
+  <span class="visuallyhidden"> to the previous question</span>
+  </a>
+  </div>
+
+
+
+  <br clear="all">
+
+  {{#vars}}
+    <!-- Use this vars loop to extract all the variables that are needed to pass onto next page -->
+  <input type="hidden" name="isnew" value="{{isnew}}">
+  <input type="hidden" name="iseu" value="{{iseu}}">
+  <input type="hidden" name="type" value="{{type}}">
+  <input type="hidden" name="speedo" value="{{speedo}}">
+  {{/vars}}
+  <input type="hidden" name="nextlink" value="answers">
+
+
+<h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Enter postcode
+  </h2>
+
+
+
+
+
+  
+
+
+
+  <form method="get" action="find-postcode" class="form">
+      <input type="hidden" name="regmark" value="{{defaultreg}}">
+      <input type="hidden" name="email" value="{{email}}">
+    <input type="hidden" name="paynum" value="{{paynum}}">
+    <input type="hidden" name="kind" value="{{kind}}">
+
+    <p>We will send you a pack by post with the relevant forms for your vehicle.</p>
+
+
+    <label>Postcode</label>
+
+    <input id="postcode" name="postcode" autocomplete="off" class="form-control form-control-1-4" type="text" required style="text-transform:uppercase">
+
+
+
+
+
+    <div class="form-group" style="margin-top:4em">
+      <input type="submit" class="button" value="Find address">
+        </div>
+
+    </form>
+
+
+</main><!-- end content container -->
+
+
+
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
